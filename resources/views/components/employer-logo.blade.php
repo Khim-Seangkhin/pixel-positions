@@ -1,1 +1,13 @@
-<img src="https://cdn.sabay.com/cdn/media.sabay.com/media/Pav-Sreypich/1012/66d563b7792c9_1725260700_small.png" alt="" {{ $attributes }} >
+@props(['employer', 'size' => 'base'])
+
+@php
+    $classes = "object-cover rounded";
+    if ($size === 'base') {
+        $classes .= " w-full h-full";
+    }
+    if ($size === 'small') {
+        $classes .= " w-14 h-11";
+    }
+@endphp
+
+<img src="{{ asset('storage/'.$employer->logo) }}" alt="" class="{{ $classes }}">

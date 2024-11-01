@@ -1,4 +1,5 @@
 <x-layout>
+    <x-button-back />
     <x-page-heading>Log In</x-page-heading>
 
     <x-forms.form method="POST" action="/login">

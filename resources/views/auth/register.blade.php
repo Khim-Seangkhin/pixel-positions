@@ -1,4 +1,5 @@
 <x-layout>
+    <x-button-back />
     <x-page-heading>Register</x-page-heading>
 
     <x-forms.form method="POST" action="/register" enctype="multipart/form-data">
@@ -9,7 +10,7 @@
 
         <x-forms.divider />
         
-        <x-forms.input label="Employer" name="employer" />
+        <x-forms.input label="Employer Name (Your Company)" name="employer" />
         <x-forms.input label="Logo" name="logo" type="file" />
 
         <x-forms.button>Create Account</x-forms.button>

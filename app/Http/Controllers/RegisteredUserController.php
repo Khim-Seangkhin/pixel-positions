@@ -33,14 +33,15 @@ class RegisteredUserController extends Controller
     {
         $validatedUser = $request->validate([
             'name' => ['required'],
-            'email' => ['required','unique:users','email','max:255'],
-            'password' => ['required','confirmed', Password::min(6)]
+            'email' => ['required', 'unique:users', 'email', 'max:255'],
+            'password' => ['required', 'confirmed', Password::min(6)]
         ]);
 
         $validatedEmployer = $request->validate([
             'employer' => ['required'],
-            'logo' => ['required',File::types(['png','jpg','webp'])]
+            'logo' => ['required', File::types(['png', 'jpg', 'webp'])]
         ]);
+
 
         $user = User::create($validatedUser);
 
@@ -53,7 +54,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
         return redirect('/');
-
     }
 
     /**
